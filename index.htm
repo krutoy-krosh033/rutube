@@ -2,27 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <!-- Иконка сайта -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>RuTube.ru :: Всё видео!</title>
-    ...
+    <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
     <div id="wrapper">
         <!-- Шапка в стиле 2000-х -->
         <header>
-            <div class="logo-container">
-                <img src="rutube_old_logo.png" alt="RuTube" class="logo">
-                <span class="slogan">Всё видео!</span>
-            </div>
-            <nav>
-                <a href="#">Видео</a> | <a href="#">Сообщества</a> | <a href="#">Передачи</a> | <a href="#">Вход</a>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Найти видео...">
-                <button>Найти!</button>
-            </div>
-        </header>
+    <div class="logo-container">
+        <a href="/">
+            <img src="rutube.png" alt="RuTube" class="logo">
+        </a>
+        <span class="slogan">Всё видео!</span>
+    </div>
+    
+    <nav class="top-menu">
+        <a href="#video">Видео</a> | 
+        <a href="#community">Сообщества</a> | 
+        <a href="#shows">Передачи</a> | 
+        <a href="#login">Вход</a>
+    </nav>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Найти видео...">
+        <button type="submit">Найти!</button>
+    </div>
+</header>
+
+
 
         <main>
             <section class="player-section">
