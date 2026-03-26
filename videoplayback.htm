@@ -11,7 +11,7 @@
         <!-- Шапка (как на главной, но чуть компактнее) -->
         <header style="padding: 10px; border-bottom: 2px solid #008000; background: #f9f9f9;">
             <a href="index.htm">
-                <img src="rutube.png" alt="RuTube" style="height: 40px; border: 0;">
+                <img src="rutube.png" alt="RuTube" style="height: 100px; border: 0;">
             </a>
             <span style="color: #666; font-style: italic; margin-left: 10px;">Всё видео!</span>
         </header>
@@ -64,5 +64,39 @@
             &copy; 2006-2009 RuTube. Всё видео в одном месте!
         </footer>
     </div>
+<script>
+    
+        // 1. Находим элементы (кнопки и полоску), которые ты сделал в HTML
+        const playBtn = document.querySelector('.btn'); // Твоя кнопка из 2000-х
+        const progressBar = document.querySelector('.fill'); // Заливка полоски прогресса
+        const videoElement = document.querySelector('video'); // Тег видео (если добавил)
+
+        // 2. Оживляем кнопку Play/Pause
+        if (playBtn && videoElement) {
+            playBtn.onclick = function() {
+                if (videoElement.paused) {
+                    videoElement.play();
+                    playBtn.innerText = 'Pause';
+                    playBtn.style.boxShadow = 'inset 2px 2px 5px #000'; // Эффект нажатия
+                } else {
+                    videoElement.pause();
+                    playBtn.innerText = 'Play';
+                    playBtn.style.boxShadow = 'none';
+                }
+            };
+        }
+
+        // 3. Двигаем полоску прогресса (как в настоящем плеере)
+        if (videoElement && progressBar) {
+            videoElement.ontimeupdate = function() {
+                // Вычисляем процент просмотренного видео
+                let percentage = (videoElement.currentTime / videoElement.duration) * 100;
+                progressBar.style.width = percentage + '%';
+            };
+        }
+
+        // 4. Пасхалка в стиле 2007-го
+        console.log("RuTube 2007 запущен! Привет из эпохи Flash!");
+</script>
 </body>
 </html>
