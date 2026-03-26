@@ -59,50 +59,17 @@
                 </aside>
             </div>
         </main>
-
+        <!-- Твой футер из 2007-го -->
         <footer style="text-align: center; padding: 20px; color: #999; font-size: 11px; border-top: 1px solid #eee;">
             &copy; 2006-2009 RuTube. Всё видео в одном месте!
         </footer>
-    </div>
-<script>
-    // 1. Инициализация PlayerJS (если файл playerjs.js подключен)
-    // Если используешь PlayerJS, стандартный тег <video> лучше убрать, 
-    // оставив только <div id="player"></div>
-    if (typeof Playerjs === "function") {
-        var player = new Playerjs({
-            id: "video-container", // Пихаем прямо в твой контейнер
-            file: "videoplayback.mp4", // Ссылка на твой видос
-            poster: "rutube.png" // Превьюха
-        });
-    }
+    </div> <!-- Закрылся wrapper -->
 
-    // 2. Оживляем кнопку Лайков (теперь по ID, как в твоем HTML)
-    const likeBtn = document.getElementById('likeBtn');
-    const likeCount = document.getElementById('likeCount');
+    <!-- ВОТ ЭТА СТРОЧКА — ПОДКЛЮЧАЕМ ТВОЙ СОБСТВЕННЫЙ PLAYER.JS -->
+    <script src="player.js"></script>
 
-    if (likeBtn && likeCount) {
-        likeBtn.onclick = function() {
-            let currentLikes = parseInt(likeCount.innerText.replace(',', '')); // Убираем запятую из числа
-            likeCount.innerText = (currentLikes + 1).toLocaleString(); // Прибавляем и возвращаем красиво
-            
-            // Стайл 2000-х: кнопка западает
-            likeBtn.disabled = true;
-            likeBtn.innerText = 'СПАСИБО!';
-            likeBtn.style.background = '#ddd';
-            likeBtn.style.boxShadow = 'inset 2px 2px 5px #888';
-            
-            console.log("Лайк засчитан! Респект за контент!");
-        };
-    }
-
-    // 3. Убираем контекстное меню (чтобы не качали по правой кнопке)
-    const videoCont = document.getElementById('video-container');
-    videoCont.oncontextmenu = function() {
-        return false; // Шах и мат, любители халявы!
-    };
-
-    console.log("RuTube 2007 Engine: Ready to rock! 🤘");
-</script>
+</body>
+</html>
 
 </body>
 </html>
