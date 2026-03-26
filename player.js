@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const likeCount = document.getElementById('likeCount');
 
     // 2. Настройка видеоплеера
-    if (video) {video.setAttribute('controlsList', 'nodownload'});
+    if (video) {video.setAttribute('controlsList', 'nodownload');
         // Умный формат (черные полосы для 4:3)
         video.style.objectFit = "contain"; 
         video.style.backgroundColor = "#000";
